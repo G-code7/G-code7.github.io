@@ -83,4 +83,18 @@
         overflow: scroll;
         padding-left: 334px;
   }
+  .Footer-container--grid{
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+  }
+  .Footer-container-logo img {
+    width: 100px;
+    
+}
+.Footer-list--item {
+    font-size: 18px;
+    line-height: 50px;
+}
 }
