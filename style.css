@@ -48,6 +48,43 @@ header {
     transform: scale(1.2);
     transition: 300ms;
 }
+/* javascript para activar el hover despues de la animacion */
+/* #linkedin-logo {animation: logo1 500ms linear 100ms  normal forwards;}
+@keyframes logo1 {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+#github-logo {animation: logo2 500ms linear 250ms  normal forwards;}
+@keyframes logo2 {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+#instagram-logo {animation: logo3 500ms linear 400ms  normal forwards;}
+@keyframes logo3 {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+} */
 .nav-grid-container .icons {
     width: 200px;
     height: auto;
@@ -227,9 +264,10 @@ header {
     height: auto;
     display: flex;
     flex-direction: column;
-    padding: 40px;
     background-color: #1C170E;
     color: var(--just-white);
+    overflow: hidden;
+    padding-bottom: 70px;
 
 }
 .home-section--articles h2{
@@ -259,15 +297,16 @@ header {
     flex-direction: column;
     padding-top: 40px;
     justify-content: center;
-    z-index: 2;
+    
 }
 .home-main-section--left .img-portfolio-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2fr 2fr ;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     margin-top: 75px;
     font-size: 2.3rem;
     gap: 15px;
+    z-index: 2;
+    padding-left: 20px;
     
 }
 .img--portfolio-item{    
@@ -277,7 +316,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--gray-color-bckgrnd2);
-    border: 1px solid #FBFCFB;
+    border: 2px solid #FBFCFB;
     border-radius: 4px;
     text-align: center;
     line-height: 8rem;
@@ -290,7 +329,7 @@ header {
 }
 .img--portfolio-item:hover {
      transform: scale(1.5);
-     border: 3px solid var(--gray-color-bckgrnd);
+     border: 1px solid var(--gray-color-bckgrnd);
      transition: 300ms;
 }
 
@@ -299,15 +338,11 @@ header {
     overflow: hidden
 }
 .home-main-section--right {
-    /* justify-self: center;
-    align-self: center;
-     */
     position: absolute;
-    line-height: top;
-    top: 50%;
-    left: 50%;
-    transform: translate(0, -50%);
+    top: 45%;
+    right: 0%;
     z-index: 1;
+    scale: 4;
 
 }
 .home-main-section--right img{
