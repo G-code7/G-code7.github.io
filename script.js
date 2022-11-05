@@ -1,5 +1,5 @@
 window.addEventListener('load', function (){
-    new Glider(document.querySelector('.carousel--list'), {
+    new Glider(document.querySelector('.carousel-list'), {
         slidesToScroll: 1,
         slidesToShow: 1.5,
         draggable: true,
@@ -17,7 +17,7 @@ window.addEventListener('load', function (){
                 slidesToShow: '3.5',
                 slidesToScroll: '2',
                 itemWidth: 150,
-                duration: 0.25
+                duration: 0.25,
               }
             },{
               // screens greater than >= 1024px
@@ -26,7 +26,7 @@ window.addEventListener('load', function (){
                 slidesToShow: 4.5,
                 slidesToScroll: 3,
                 itemWidth: 150,
-                duration: 0.25
+                duration: 0.25,
               }
             }
         ]
