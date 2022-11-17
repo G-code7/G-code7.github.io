@@ -129,7 +129,7 @@ body::-webkit-scrollbar-thumb {
 .Sub-Subtittle {
     font-size: 2.4rem;
     letter-spacing: -15%;
-    font-weight: 400;
+    font-weight: 500;
     padding-bottom: 18px;
 }
 .Text-paragraph {
@@ -152,6 +152,10 @@ body::-webkit-scrollbar-thumb {
 }
 .carousel{
     position: relative;
+}
+
+.icon-programs {
+    border-radius: 15px;
 }
 
 /* caruosel arrows  */
