@@ -240,7 +240,6 @@ I am a **Results-Driven Full Stack Web Developer** with a solid **5+ year track 
 - **Portfolio**: [g-code7.github.io](https://g-code7.github.io)
 - **LinkedIn**: [Gustavo Liendo](https://www.linkedin.com/in/gustavo-liendo-b5b668111/)
 - **GitHub**: [@G-code7](https://github.com/G-code7)
-- **Instagram**: [@g_code20](https://www.instagram.com/g_code20/)
 
 ## 🎮 Easter Eggs
 
