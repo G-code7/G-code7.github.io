@@ -2,173 +2,761 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <meta name="description" content="Gustavo Liendo - Full Stack Developer crafting exceptional digital experiences with 5+ years of expertise">
+    <meta name="keywords" content="Full Stack Developer, React, Python, Django, Web Development, Portfolio">
+    <meta name="author" content="Gustavo Liendo">
+    <title>Gustavo Liendo | Full Stack Developer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 1023px)" href="./stylemobi.css" >
-    <title>G-code WebPage</title>
 </head>
 <body>
-    <header class="header-home-section">
-        <div class="logo-header">
-            <img src="./assets/logo-completo.png" alt="G-code">
-        </div>
-        <div class="socialMedia-section">
-            <a href="https://github.com/G-code7">
-                <img src="./assets/github.png" alt="Github">   
-            </a>
-            <a href="https://www.linkedin.com/in/gustavo-liendo-b5b668111/">
-                <img src="./assets/linkedin.png" alt="Linkedin"> 
-            </a>
-            <a href="https://www.instagram.com/g_code20/">
-                <img src="./assets/instagram.png" alt="Instagram"> 
-            </a>
-        </div>
-        </div>
-    </header>
-    <section class="hero-home">
-        <img src="./assets/Foto.jfif" alt="My photo">
-        <h1>Gustavo Liendo</h1>
-        <a class="button-hero" type="button" href="#Portfolio">Portfolio</a>
-    </section>
-    <section class="section-home--1">
-        <div class="section-home1-left">
-            <h2 class="Sub-tittle">About me</h2>
-        </div>
-        <div class="section-home1-right">
-            <h3 class="Sub-Subtittle">I love to invest time on learning </h3>
-            <p class="Text-paragraph">My interest are focused on programming, electronics, reading and music.<br>
-            I like philosophy and the importance of good living, I&#39m triying to reach the absolute best of what I&#39m capable of. </p>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-            <h3 class="Sub-Subtittle">If there is something new... </h3>
-            <p class="Text-paragraph">When I began this path I was a little lost were was a many languages and many frameworks and many more questions  like “how?” <br>
-            For some time to now I&#39m happy to focus on programming and every day I try to learn something new or practice the knowledge acquired.<br>
-            I just don&#39t wanna stop. </p>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="code-brackets">&lt;</span>
+                <span class="code-text">G-CODE</span>
+                <span class="code-brackets">/&gt;</span>
+            </div>
+            <div class="loading-bar">
+                <div id="loadingProgress" class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Crafting Your Experience...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div id="scrollProgress" class="scroll-progress"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">G-CODE</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#story" class="nav-link">Story</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-line"></span>
+                        <span class="greeting-text">Hello, I'm</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Gustavo</span>
+                        <span class="title-line">Liendo</span>
+                    </h1>
+                    <p class="hero-subtitle subtitle">
+                        <span class="subtitle-highlight">Full Stack Developer</span> crafting exceptional digital experiences that inspire and transform
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-plus">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-percent">%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#work" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Let's Talk</span>
+                            <i class="fas fa-comment-dots"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div id="heroCard" class="hero-card">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="code-window">
+                                <div class="window-header">
+                                    <div class="window-buttons">
+                                        <span class="btn-close"></span>
+                                        <span class="btn-minimize"></span>
+                                        <span class="btn-maximize"></span>
+                                    </div>
+                                    <div class="window-title">portfolio.jsx</div>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code><span class="code-keyword">const</span> <span class="code-function">Portfolio</span> = () => {
+  <span class="code-keyword">return</span> (
+    <span class="code-tag">&lt;div</span> <span class="code-attr">className</span>=<span class="code-string">"excellence"</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;Passion</span> <span class="code-attr">level</span>=<span class="code-string">"infinite"</span> <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Innovation</span> <span class="code-attr">driven</span>=<span class="code-string">"true"</span> <span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;Quality</span> <span class="code-attr">focus</span>=<span class="code-string">"always"</span> <span class="code-tag">/&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+  );
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll to explore</span>
+                <div class="scroll-icon">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="section-home--2">
-        <h2 class="Sub-tittle">Skills</h2>
-        <p class="Text-paragraph">Here is some of the languages and programs that I ussually use.</p>
 
-        <div class="carousel">
-            <div class="carousel__container">
-                <button aria-label="Before" class="carousel__before" ></button>
-                <i class="arrow-left-ca"> </i>
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="section-container">
+            <div class="story-header" data-animate>
+                <span class="section-label">My Journey</span>
+                <h2 class="section-title">The Story Behind the Code</h2>
+                <p class="section-subtitle">From curiosity to mastery - a journey of continuous learning and growth</p>
             </div>
 
-            <div class="carousel-list">
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/html.png" alt="HTML5">
-                    <p>HTML5</p>
+            <div class="story-timeline">
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-circle"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge">The Beginning</span>
+                        <h3>Falling in Love with Code</h3>
+                        <p>It started with curiosity. A simple "Hello World" that sparked something powerful. I found myself lost in the beauty of creating something from nothing, solving puzzles, and bringing ideas to life through code.</p>
+                        <div class="timeline-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"When I began this path, I was a little lost. There were many languages, many frameworks, and many questions like 'how?'"</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/css-3.png" alt="CCS3">
-                    <p>CCS3</p>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-circle"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge">The Evolution</span>
+                        <h3>Finding My Path</h3>
+                        <p>Through dedication and countless hours of learning, I discovered my passion for full-stack development. Each project became a lesson, each challenge an opportunity to grow. I learned to love the process as much as the result.</p>
+                        <div class="story-achievements">
+                            <div class="achievement-pill">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Continuous Learning</span>
+                            </div>
+                            <div class="achievement-pill">
+                                <i class="fas fa-code"></i>
+                                <span>Multiple Technologies</span>
+                            </div>
+                            <div class="achievement-pill">
+                                <i class="fas fa-rocket"></i>
+                                <span>Real-World Projects</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/js.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/git.png" alt="Git">
-                    <p>Git</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/sass.png" alt="Illustrator">
-                    <p>Sass</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/illustrator.png" alt="Illustrator">
-                    <p>Illustrator</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/photoshop.png" alt="Photoshop">
-                    <p>Photoshop</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/figma.png" alt="Figma">
-                    <p>Figma</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/wordpress.png" alt="Wordpress">
-                    <p>Wordpress</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/elementor.png" alt="Elementor">
-                    <p>Elementor</p>
-                </div>
-
-                <div class="carousel-element">
-                    <img class="icon-programs" src="./assets/shopify.png" alt="Shopify">
-                    <p>Shopify</p>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-marker">
+                        <div class="marker-circle"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-badge">The Present</span>
+                        <h3>Crafting Excellence</h3>
+                        <p>Today, I'm not just writing code - I'm crafting experiences. With 5+ years of expertise, I specialize in building scalable, high-performance web applications that make a difference. Every line of code is written with purpose, passion, and precision.</p>
+                        <div class="story-philosophy">
+                            <div class="philosophy-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Passion-Driven</h4>
+                                <p>I love investing time in learning and perfecting my craft</p>
+                            </div>
+                            <div class="philosophy-card">
+                                <i class="fas fa-brain"></i>
+                                <h4>Problem Solver</h4>
+                                <p>Every challenge is an opportunity to innovate</p>
+                            </div>
+                            <div class="philosophy-card">
+                                <i class="fas fa-infinity"></i>
+                                <h4>Never Stop</h4>
+                                <p>Always learning, always growing, always improving</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="carousel__container">
-                <button aria-label="after" class="carousel__after" ></button>
-                <i class="arrow-right-ca"> </i>
+            <div class="story-quote-block" data-animate>
+                <div class="quote-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <blockquote>
+                        "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present."
+                    </blockquote>
+                    <cite>— Marcus Aurelius, Meditations</cite>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="carousel--indicators" role="tablists"></div>
-    </section>
-    <section class="section-home--3">
-        <h3 class="Sub-Subtittle">Let&#39s work on our present</h3>
-        <q class="Text-paragraph">Never let the future disturb you. You will meet it, if you have to,with the <br>same weapons of reason which today arm you against the present.</q>
-        <p class="Text-paragraph">~ Marcus Aurelius, Meditations.</p>
-    </section>
-    <section class="section-home--4" id="Portfolio">
-        <h2 class="Sub-tittle">Some of my last works</h2>
-        <div class="portfolio-container">
-            <a href="https://onlinestoreavanti.com" target="_blank">
-                <img src="./assets/Avantis-page.jpg" alt="IMG-portfolio1">
-            </a>
-            <a href="https://carbon-activated-pty.myshopify.com" target="_blank">
-                <img src="./assets/Carbon.jpg" alt="IMG-portfolio2">
-            </a>
-            <a href="https://creestudio.es" target="_blank">
-                <img src="./assets/cree-page.jpg" alt="IMG-portfolio3">
-            </a>
-            <a href="https://www.consumiblespanatoner.com" target="_blank">
-                <img src="./assets/Panatoner-page.jpg" alt="IMG-portfolio4">
-            </a>
-            
-            
-            
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise-section">
+        <div class="section-container">
+            <div class="expertise-header" data-animate>
+                <span class="section-label">What I Do</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">A comprehensive skill set covering the entire development lifecycle</p>
+            </div>
+
+            <div class="expertise-grid">
+                <!-- Front-End Card -->
+                <div class="skill-card" data-animate>
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Front-End & Design</h3>
+                    <p>Creating beautiful, responsive interfaces that users love</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">SASS</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">UI/UX</span>
+                    </div>
+                    <div class="skill-meter">
+                        <div class="meter-fill" data-percent="95"></div>
+                    </div>
+                </div>
+
+                <!-- Back-End Card -->
+                <div class="skill-card" data-animate>
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Back-End & Databases</h3>
+                    <p>Building robust, scalable server-side applications</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                    <div class="skill-meter">
+                        <div class="meter-fill" data-percent="92"></div>
+                    </div>
+                </div>
+
+                <!-- DevOps Card -->
+                <div class="skill-card" data-animate>
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>DevOps & Cloud</h3>
+                    <p>Deploying and managing applications in the cloud</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Render</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                    <div class="skill-meter">
+                        <div class="meter-fill" data-percent="88"></div>
+                    </div>
+                </div>
+
+                <!-- CMS & E-commerce Card -->
+                <div class="skill-card" data-animate>
+                    <div class="skill-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>CMS & E-commerce</h3>
+                    <p>Building powerful online stores and content platforms</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Shopify</span>
+                        <span class="skill-tag">Elementor</span>
+                        <span class="skill-tag">WooCommerce</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Analytics</span>
+                    </div>
+                    <div class="skill-meter">
+                        <div class="meter-fill" data-percent="90"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-container" data-animate>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" data-target="100000">0</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Cups of Coffee</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+            </div>
         </div>
     </section>
-    <footer>
-        <div class="logo-footer">
-            <a href="#top">
-                <img src="./assets/logo-completo.png" alt="G-code">
-            </a>
+
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+        <div class="section-container">
+            <div class="work-header" data-animate>
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of my best work - from concept to deployment</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- SaaS Project -->
+                <div class="project-card featured" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                            <p>SaaS Platform</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge featured-badge">Featured Project</div>
+                        <h3>Modern SaaS Architecture</h3>
+                        <p>A comprehensive SaaS platform showcasing expertise in system architecture, featuring React/Vite frontend, Python/Django backend, PostgreSQL database, and Docker containerization with cloud deployment.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4Geeks Academy -->
+                <div class="project-card" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://4geeksacademy.com" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>4Geeks Academy</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge">Enterprise</div>
+                        <h3>4Geeks Academy Website</h3>
+                        <p>Contributed to the main repository implementing new features and refining functionalities in an agile environment. Focus on UI/UX enhancement and SEO optimization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Gatsby</span>
+                            <span class="tech-tag">SEO</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avanti Store -->
+                <div class="project-card" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://onlinestoreavanti.com" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-store"></i>
+                            <p>Avanti Store</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge">E-commerce</div>
+                        <h3>Avanti Online Store</h3>
+                        <p>Full-cycle e-commerce development with custom features, responsive design, and optimized checkout process. Integrated payment gateways and inventory management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">WooCommerce</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carbon Activated -->
+                <div class="project-card" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://carbon-activated-pty.myshopify.com" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-leaf"></i>
+                            <p>Carbon Activated</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge">Shopify</div>
+                        <h3>Carbon Activated Store</h3>
+                        <p>Custom Shopify theme development with focus on sustainability and eco-friendly design. Implemented custom product filters and enhanced user experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Shopify</span>
+                            <span class="tech-tag">Liquid</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cree Studio -->
+                <div class="project-card" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://creestudio.es" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                            <p>Cree Studio</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge">Creative</div>
+                        <h3>Cree Studio Portfolio</h3>
+                        <p>Creative agency portfolio website with stunning animations and interactive elements. Showcasing work through immersive visual storytelling.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panatoner -->
+                <div class="project-card" data-animate>
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://www.consumiblespanatoner.com" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-print"></i>
+                            <p>Panatoner</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-badge">B2B</div>
+                        <h3>Panatoner E-commerce</h3>
+                        <p>B2B e-commerce platform for office supplies with advanced search, bulk ordering, and customer portal for order tracking and history.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Custom Plugin</span>
+                            <span class="tech-tag">B2B</span>
+                            <span class="tech-tag">Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-cta" data-animate>
+                <h3>Want to see more?</h3>
+                <p>Check out my GitHub for more projects and code samples</p>
+                <a href="https://github.com/G-code7" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>Visit My GitHub</span>
+                </a>
+            </div>
         </div>
-        <hr class="solid">
-        <div class="socialMedia-section">
-            <a href="https://github.com/G-code7">
-                <img src="./assets/github.png" alt="Github">   
-            </a>
-            <a href="https://www.linkedin.com/in/gustavo-liendo-b5b668111/">
-                <img src="./assets/linkedin.png" alt="Linkedin"> 
-            </a>
-            <a href="https://www.instagram.com/g_code20/">
-                <img src="./assets/instagram.png" alt="Instagram"> 
-            </a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="contact-header" data-animate>
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Build Something Amazing</h2>
+                <p class="section-subtitle">Have a project in mind? Let's discuss how we can work together</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-animate>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>Drop me a line anytime</p>
+                        <a href="mailto:contact@gcode.dev">contact@gcode.dev</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Let's connect professionally</p>
+                        <a href="https://www.linkedin.com/in/gustavo-liendo-b5b668111/" target="_blank">Connect with me</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check out my code</p>
+                        <a href="https://github.com/G-code7" target="_blank">View repositories</a>
+                    </div>
+
+                    <div class="contact-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Always seeking new opportunities and challenges in full stack development where I can leverage my expertise in scalable architectures."</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container" data-animate>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="full-stack">Full Stack Development</option>
+                                <option value="frontend">Frontend Development</option>
+                                <option value="backend">Backend Development</option>
+                                <option value="ecommerce">E-commerce Solutions</option>
+                                <option value="cms">CMS Development</option>
+                                <option value="consulting">Technical Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="small">Small Project ($1k - $5k)</option>
+                                <option value="medium">Medium Project ($5k - $15k)</option>
+                                <option value="large">Large Project ($15k - $50k)</option>
+                                <option value="enterprise">Enterprise ($50k+)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" required rows="6" placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <small>© G-code  made it with love</small>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">G-CODE</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p>Crafting exceptional digital experiences with passion and precision.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/G-code7" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gustavo-liendo-b5b668111/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/g_code20/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#story">Story</a></li>
+                            <li><a href="#expertise">Expertise</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#expertise">Full Stack Development</a></li>
+                            <li><a href="#expertise">Frontend Development</a></li>
+                            <li><a href="#expertise">Backend Development</a></li>
+                            <li><a href="#expertise">E-commerce Solutions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Stats</h4>
+                        <ul>
+                            <li><span class="footer-stat">5+ Years Experience</span></li>
+                            <li><span class="footer-stat">50+ Projects</span></li>
+                            <li><span class="footer-stat">30+ Happy Clients</span></li>
+                            <li><span class="footer-stat" id="visitorCount">0</span> Site Visits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 G-CODE. Made with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+                <p class="footer-tagline">Always learning. Always growing. Never stopping.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-    <script src="./script.js" ></script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
